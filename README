@@ -1,0 +1,11 @@
+
+-------- Battle Rhythm Game --------
+
+This project is started as a HSC Major Work but is intnded to continue as an open source project.
+
+Initial designs involved a hybrid rhythm/rpg game with character progression and abilities that could be used during a 'battle'. Many of the ideas for rpg mechanics have subsequently been dropped to improve accessibility and target audience spectrum. Instead the game will have a unique set of modes and puzzle game elements.
+
+Language is Python 3.3 and uses the pygame library
+
+Contributors:
+	Ryong-Bo (Nicholas Verstegen)
