@@ -43,10 +43,10 @@ def main(screen, track):
 	total_notes = 0
 	bad_notes = 0
 
-	tapped = [False, False, False, False, False]  # true if the key has not be released
+	tapped = [False, False, False, False]  # true if the key has not be released
 
 	# true if a note will be scored from presses q,w,e,r,t
-	scoring_presses = [False, False, False, False, False]
+	scoring_presses = [False, False, False, False]
 
 	while 1:
 		# event phase
@@ -68,24 +68,18 @@ def main(screen, track):
 				scoring_presses[1] = True
 		else:
 			tapped[1] = False
-		if keys[pygame.constants.K_e]:
+		if keys[pygame.constants.K_o]:
 			if not tapped[2]:
 				tapped[2] = True
 				scoring_presses[2] = True
 		else:
 			tapped[2] = False
-		if keys[pygame.constants.K_o]:
+		if keys[pygame.constants.K_p]:
 			if not tapped[3]:
 				tapped[3] = True
 				scoring_presses[3] = True
 		else:
 			tapped[3] = False
-		if keys[pygame.constants.K_p]:
-			if not tapped[4]:
-				tapped[4] = True
-				scoring_presses[4] = True
-		else:
-			tapped[4] = False
 
 		# logic phase
 
@@ -98,12 +92,10 @@ def main(screen, track):
 				if new_notes[0]:
 					notes.append(note.FireNote(note_speed))
 				if new_notes[1]:
-					notes.append(note.MetalNote(note_speed))
-				if new_notes[2]:
 					notes.append(note.EarthNote(note_speed))
-				if new_notes[3]:
+				if new_notes[2]:
 					notes.append(note.WaterNote(note_speed))
-				if new_notes[4]:
+				if new_notes[3]:
 					notes.append(note.AirNote(note_speed))
 
 		# fade in and countdown
@@ -127,7 +119,7 @@ def main(screen, track):
 
 		# scores a note if it is
 		for n in notes:
-			for key in range(0, 5):
+			for key in range(0, 4):
 				if n.score(key, scoring_presses):
 					notes_scored = notes_scored + 1
 					scoring_presses[key] = False
@@ -147,7 +139,7 @@ def main(screen, track):
 				bad_notes = bad_notes + 1
 				notes_scored = notes_scored - 1
 
-		scoring_presses = [False, False, False, False, False]  # reset score presses
+		scoring_presses = [False, False, False, False]  # reset score presses
 
 		# render phase
 

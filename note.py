@@ -33,20 +33,16 @@ class Note(object):
 				if key == 0 and scoring_presses[key]:
 					self.scored = True
 					return True
-			if self.type == 'metal':
+			if self.type == 'earth':
 				if key == 1 and scoring_presses[key]:
 					self.scored = True
 					return True
-			if self.type == 'earth':
+			if self.type == 'water':
 				if key == 2 and scoring_presses[key]:
 					self.scored = True
 					return True
-			if self.type == 'water':
-				if key == 3 and scoring_presses[key]:
-					self.scored = True
-					return True
 			if self.type == 'air':
-				if key == 4 and scoring_presses[key]:
+				if key == 3 and scoring_presses[key]:
 					self.scored = True
 					return True
 
@@ -57,29 +53,22 @@ class FireNote(Note):
 		super(FireNote, self).__init__(self.type, note_speed)
 
 
-class MetalNote(Note):
-	def __init__(self, note_speed):
-		self.type = 'metal'
-		super(MetalNote, self).__init__(self.type, note_speed)
-		self.rect = self.rect.move(45, 0)
-
-
 class EarthNote(Note):
 	def __init__(self, note_speed):
 		self.type = 'earth'
 		super(EarthNote, self).__init__(self.type, note_speed)
-		self.rect = self.rect.move(90, 0)
+		self.rect = self.rect.move(55, 0)
 
 
 class WaterNote(Note):
 	def __init__(self, note_speed):
 		self.type = 'water'
 		super(WaterNote, self).__init__(self.type, note_speed)
-		self.rect = self.rect.move(135, 0)
+		self.rect = self.rect.move(110, 0)
 
 
 class AirNote(Note):
 	def __init__(self, note_speed):
 		self.type = 'air'
 		super(AirNote, self).__init__(self.type, note_speed)
-		self.rect = self.rect.move(180, 0)
+		self.rect = self.rect.move(165, 0)
