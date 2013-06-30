@@ -37,7 +37,7 @@ def main(screen, track):
 	mspb_time = 0
 	game_ticks = 0
 	mspb_start = False
-	music_start_ticks = int((785 / note_speed)) + 261
+	music_start_ticks = int((780 / note_speed)) + 261
 
 	notes_scored = 0
 	total_notes = 0
@@ -153,10 +153,13 @@ def main(screen, track):
 				screen.blit(n.ghost_surf, n.ghost_rect)
 
 		try:
-			percent_score = 'Score: ' + str(int(notes_scored / total_notes * 100)) + '%'
+			percent_score =  int(notes_scored / total_notes * 100)
+			if percent_score > 100:
+				percent_score = 100
 		except ZeroDivisionError:
-			percent_score = 'Score: 100%'
-		score_label = score_font.render(percent_score, 1, (255, 255, 255))
+			percent_score = 100
+		score_string = 'Score: ' + str(percent_score) + '%'
+		score_label = score_font.render(score_string, 1, (255, 255, 255))
 		screen.blit(score_label, (700, 10))
 		bad_notes_label = score_font.render("Bad Notes: " + str(bad_notes), 1, (255, 255, 255))
 		screen.blit(bad_notes_label, (700, 25))

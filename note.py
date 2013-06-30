@@ -28,7 +28,7 @@ class Note(object):
 				return True
 
 	def score(self, key, scoring_presses):
-		if self.rect.y >= 15 and self.rect.y <= 85:
+		if self.rect.bottom >= 47 and self.rect.top <= 75:
 			if self.type == 'fire':
 				if key == 0 and scoring_presses[key]:
 					self.scored = True
@@ -57,18 +57,18 @@ class EarthNote(Note):
 	def __init__(self, note_speed):
 		self.type = 'earth'
 		super(EarthNote, self).__init__(self.type, note_speed)
-		self.rect = self.rect.move(55, 0)
+		self.rect = self.rect.move(60, 0)
 
 
 class WaterNote(Note):
 	def __init__(self, note_speed):
 		self.type = 'water'
 		super(WaterNote, self).__init__(self.type, note_speed)
-		self.rect = self.rect.move(110, 0)
+		self.rect = self.rect.move(120, 0)
 
 
 class AirNote(Note):
 	def __init__(self, note_speed):
 		self.type = 'air'
 		super(AirNote, self).__init__(self.type, note_speed)
-		self.rect = self.rect.move(165, 0)
+		self.rect = self.rect.move(180, 0)
