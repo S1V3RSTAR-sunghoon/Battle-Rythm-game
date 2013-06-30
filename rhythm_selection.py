@@ -52,9 +52,18 @@ def main(screen):
 					end = 'rhythm'
 				elif back_rect.collidepoint(event.pos):
 					end = 'menu'
+				elif not list_animated and event.pos[0] < 400:
+					if event.pos[1] < 400 and selected_track != 0:
+						list_animated = "Up"
+						selected_track -= 1
+						track_animate_i = 0
+					elif event.pos[1] > 400 and selected_track != len(tracks) - 1:
+						list_animated = "Down"
+						selected_track += 1
+						track_animate_i = 0
 
 		keys = pygame.key.get_pressed()
-		if list_animated is False:
+		if not list_animated:
 			if keys[pygame.constants.K_UP] and selected_track != 0:
 				list_animated = "Up"
 				selected_track -= 1
