@@ -19,6 +19,19 @@ def main(screen, track):
 	note_track_rect = note_track_img.get_rect()
 	note_track_rect = note_track_rect.move(277, 0)
 
+	q_tile_img = pygame.image.load("Data/Images/ControlTiles/QTile.png")
+	w_tile_img = pygame.image.load("Data/Images/ControlTiles/WTile.png")
+	o_tile_img = pygame.image.load("Data/Images/ControlTiles/OTile.png")
+	p_tile_img = pygame.image.load("Data/Images/ControlTiles/PTile.png")
+	q_tile_rect = q_tile_img.get_rect()
+	w_tile_rect = w_tile_img.get_rect()
+	o_tile_rect = o_tile_img.get_rect()
+	p_tile_rect = p_tile_img.get_rect()
+	q_tile_rect = q_tile_rect.move(297, 30)
+	w_tile_rect = w_tile_rect.move(357, 30)
+	o_tile_rect = o_tile_rect.move(420, 30)
+	p_tile_rect = p_tile_rect.move(480, 30)
+
 	fader_img = pygame.image.load("Data/Images/fader.png")
 	fader_rect = fader_img.get_rect()
 	fader_img = fader_img.convert()
@@ -146,6 +159,10 @@ def main(screen, track):
 		screen.fill((200, 200, 200))  # background goes here later
 
 		screen.blit(note_track_img, note_track_rect)
+		screen.blit(q_tile_img, q_tile_rect)
+		screen.blit(w_tile_img, w_tile_rect)
+		screen.blit(o_tile_img, o_tile_rect)
+		screen.blit(p_tile_img, p_tile_rect)
 
 		for n in notes:
 			screen.blit(n.surf, n.rect)
@@ -156,13 +173,15 @@ def main(screen, track):
 			percent_score =  int(notes_scored / total_notes * 100)
 			if percent_score > 100:
 				percent_score = 100
+			if percent_score < 0:
+				percent_score = 0
 		except ZeroDivisionError:
 			percent_score = 100
 		score_string = 'Score: ' + str(percent_score) + '%'
 		score_label = score_font.render(score_string, 1, (255, 255, 255))
-		screen.blit(score_label, (700, 10))
+		screen.blit(score_label, (650, 10))
 		bad_notes_label = score_font.render("Bad Notes: " + str(bad_notes), 1, (255, 255, 255))
-		screen.blit(bad_notes_label, (700, 25))
+		screen.blit(bad_notes_label, (650, 25))
 		if not mspb_start:
 			screen.blit(title_label, (400, 400))
 
