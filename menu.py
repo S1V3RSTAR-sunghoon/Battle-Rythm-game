@@ -64,6 +64,7 @@ def main(screen):
 
 		fps_clock.tick(60)
 
+		# navigation phase
 		if end:
 			break
 	if end == 'story':

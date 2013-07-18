@@ -5,17 +5,12 @@ This project is started as a HSC Major Work but is intnded to continue as an ope
 
 The core of this project is a 4 track rhythm game. From left to right the notes are scored with Q, W, O and P when they are within the scoring area.
 
-Instant rhythm mode allows the player to quickly choose a song and begin playing any of the game's songs with their selection of mechanics.
+Instant rhythm mode allows the player to quickly choose a song and begin playing any of the game's songs.
 
-In challenge mode players attempt to complete rhythms with set goals and mechanics.
-
-- Instant rhythm mechanic selection is not yet implemented.
-- Challenge mode is not yet implemented.
-
-- Mechnics to implement;
-	reload
-
+Posts on this blog document the development of the game. http://designingcodeisart.blogspot.com.au/
+	
 Language is Python 3.3 and uses the pygame library
 
 Contributors:
 	Ryong-Bo (Nicholas Verstegen)
+	Lachlan Foster
