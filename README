@@ -7,8 +7,7 @@ The core of this project is a 4 track rhythm game. From left to right the notes 
 
 Instant rhythm mode allows the player to quickly choose a song and begin playing any of the game's songs.
 
-Posts on this blog document the development of the game. http://designingcodeisart.blogspot.com.au/
-	
+
 Language is Python 3.3 and uses the pygame library
 
 Contributors:
